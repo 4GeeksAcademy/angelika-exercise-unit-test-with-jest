@@ -1,20 +1,23 @@
-// Declaramos una función con el nombre exacto "formEuroToDollar"
+let oneEuroIs = {
+    "JPY": 156.5, // Yen 
+    "USD": 1.07,  // Dolar
+    "GBP": 0.87,  // Libra
+}
+
+//Convertir de euros a dolar
 const fromEuroToDollar = function(valueInEuro) {
-    // Convertimos el valor a dólares
-    let valueInDollar = valueInEuro * 1.07;
-    // Retornamos el valor en dólares
+    let valueInDollar = valueInEuro * oneEuroIs.USD;
     return valueInDollar;
 }
+//Convertir de dolar a yenes
 const fromDollarToYen = function(valueInDollar) {
-    // Convertimos el valor a dólares
-    let valueInYen = valueInDollar * 155.39;
-    // Retornamos el valor en dólares
+    let valueInYen = (valueInDollar / oneEuroIs.USD) * oneEuroIs.JPY;
     return valueInYen;
 }
+
+//Convertir de yenes a libras
 const fromYenToPound = function(valueInYen) {
-    // Convertimos el valor a dólares
-    let valueInPound = valueInYen * 0.0051;
-    // Retornamos el valor en dólares
+    let valueInPound = (valueInYen / oneEuroIs.JPY) * oneEuroIs.GBP;
     return valueInPound;
 }
 
